@@ -1,0 +1,68 @@
+﻿@model SIMS.Models.MailModel
+@{
+    ViewBag.Title = "DailyReportView";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<html>
+<head>
+    
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ('@ViewBag.Meaasge' == 'Sent') {
+                alert('Mail has been sent successfully');
+            }
+        });
+    </script>
+</head>
+
+
+<body class="sidebar-mini sidebar-collapse" style="height:auto">
+
+    <div class="content-wrapper" style="min-height: 1228.23px;">
+
+        <div class="card card-primary col-md-6">
+            <div class="card-header">
+                <h3 class="card-title">Daily Report</h3>
+            </div>
+
+            <form role="form" name="sendreport" method="post" action="@Url.Action("DailyReportView","DailyReport")" enctype="multipart/form-data">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>From</label>
+
+                        @Html.TextBoxFor(model => model.From, new { @class="form-control"})
+                   
+                    </div>
+
+                    <div class="form-group">
+                        <label>To&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        @Html.TextBoxFor(model => model.To, new { @class = "form-control"})
+
+                        @*<textarea class="form-control" rows="5" placeholder="Enter ..." name="remarks"></textarea>*@
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        @Html.TextBoxFor(model => model.Subject, new { @class = "form-control"})
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        @Html.TextAreaFor(model => model.Body, new { @class = "form-control"})
+                    </div>
+
+                </div>
+
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+
+                    <button class="btn btn-primary" type="submit">Send To Project Guide </button>
+                    <button class="btn btn-primary" type="reset">Clear</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+    <span style="color:green">@ViewBag.Message</span>
+</body>
+</html>

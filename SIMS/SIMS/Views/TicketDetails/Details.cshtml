@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Font Awesome Icons -->
+<link href="~/Content/plugins/fontawesome-free/css/fontawesome.min.css" rel="stylesheet" />
+<link href="~/Content/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet" />
+<link href="~/Content/plugins/select2/css/select2.min.css" rel="stylesheet" />
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link href="~/Content/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+<!-- Theme style -->
+
+<link href="~/Content/dist/css/adminlte.min.css" rel="stylesheet" />
+<!-- Google Font: Source Sans Pro -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+<body class="sidebar-mini sidebar-collapse" style="height:auto">
+</body>
+<div class="content-wrapper" style="min-height: 1228.23px;">
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Details page-->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Ticket Details Page</h3>
+                        </div>
+                        <form role="form">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Ticket Title</label>
+                                    <input type="text" readonly class="form-control-plaintext" id="title" value="Sample Ticket">
+                                </div>
+                                <div class="form-group">
+                                    <label>Project</label>
+                                    <input type="text" readonly class="form-control-plaintext" id="project" value="SIMS">
+                                </div>
+                                <div class="form-group">
+                                    <label>Type</label>
+                                    <input type="text" readonly class="form-control-plaintext" id="Type" value="Task">
+                                </div>
+                                <div class="form-group">
+                                    <label>Remarks</label>
+                                    <textarea readonly class="form-control-plaintext" rows="3" placeholder="Bug in Report"></textarea>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="reset" class="btn btn-primary ">Edit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--Right Coulmn-->
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Ticket Details Page</h3>
+
+                        </div>
+                        <form role="form">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="title" id="TT">Ticket Title</label>
+                                    <input type="text" readonly class="form-control-plaintext" id="TT" value="Sample Ticket">
+                                </div>
+                                <div class="form-group">
+                                    <label>Remarks</label>
+                                    <textarea readonly class="form-control-plaintext" rows="3" placeholder="Bug in Report"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label id="AT">AssignTo</label>
+                                    <select class="select2" multiple data-placeholder="h" style="width: 100%;">
+                                        <option data-select2-id="1">HarshPatel</option>
+                                        <option data-select2-id="2">AksharPatel</option>
+                                        <option data-select2-id="3">MihirPAtel</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Comment</label>
+                                    <input type="text" readonly class="form-control-plaintext" id="CMT" value="Quick Resolve">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="reset" class="btn btn-primary" uiactions="valuechange">Edit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">History</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                            <!-- /.card-tools -->
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body" style="height:auto">
+                            <div class="callout callout-info">
+                                <h6>Status Changed by Harsh on 10-04-2020 17:00pm</h6>
+                                <h6>Current Status: In Progress </h6>
+                                <h6>Previous Status: Open </h6>
+                            </div>
+                            <div class="callout callout-info">
+                                <h6>Assigned to Mihir and Harsh on 10-04-2020 10:00am</h6>
+                                <h6>Assigned by Riddhi Pandya</h6>
+                            </div>
+                            <div class="callout callout-info">
+                                <h6>Created by: Riddhi Pandya</h6>
+                                <h6>Created On: 04/04/2020 11:00am</h6>
+                                <h6>Ticket As: Task</h6>
+                                <h6>Ticket title: This is sample ticket</h6>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</div>
+<!-- ./wrapper -->
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="~/Content/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/Content/dist/js/adminlte.min.js"></script>
+<script src="~/Content/plugins/select2/js/select2.full.min.js"></script>
+<script src="~/Content/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+
+    }
+</script>

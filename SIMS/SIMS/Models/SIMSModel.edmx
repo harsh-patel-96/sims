@@ -1,0 +1,2280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SIMS1DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Answers">
+          <Key>
+            <PropertyRef Name="AnswerId" />
+          </Key>
+          <Property Name="AnswerId" Type="int" Nullable="false" />
+          <Property Name="QAid" Type="int" />
+          <Property Name="AnsweredBy" Type="int" />
+          <Property Name="Answer" Type="nvarchar(max)" />
+          <Property Name="AnsweredOn" Type="datetime" />
+          <Property Name="LikesCount" Type="int" />
+          <Property Name="DislikesCount" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CollegeProjectGuide">
+          <Key>
+            <PropertyRef Name="CollegeGuideId" />
+          </Key>
+          <Property Name="CollegeGuideId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegID" Type="int" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="CollegeName" Type="nvarchar(max)" />
+          <Property Name="University" Type="nvarchar(max)" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="CollegeIdCard" Type="nvarchar(max)" />
+          <Property Name="IdProof" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeDetails">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmpType" Type="int" />
+          <Property Name="Department" Type="int" />
+          <Property Name="Designation" Type="int" />
+          <Property Name="Role" Type="int" />
+          <Property Name="JoinDate" Type="datetime" />
+          <Property Name="EmpBand" Type="int" />
+          <Property Name="ReportingTo" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InternshipApplication">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Name="ApplicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RegID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Address3" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Location" Type="nvarchar" MaxLength="250" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="Course" Type="int" />
+          <Property Name="Semester" Type="int" />
+          <Property Name="CollegeIDCard" Type="nvarchar(max)" />
+          <Property Name="IdProof" Type="nvarchar(max)" />
+          <Property Name="NOCLetter" Type="nvarchar(max)" />
+          <Property Name="CollegeName" Type="nvarchar(max)" />
+          <Property Name="University" Type="nvarchar(max)" />
+          <Property Name="ProjectSubmissionDate" Type="datetime" />
+          <Property Name="CollegeProjectGuide" Type="nvarchar(max)" />
+          <Property Name="CollegeProjectGuideEmail" Type="nvarchar" MaxLength="200" />
+          <Property Name="CollegeProjectGuideContact" Type="int" />
+          <Property Name="Reference" Type="nvarchar(max)" />
+          <Property Name="ApplicationStatus" Type="int" />
+          <Property Name="ApprovalLetter" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InternshipTeam">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="InternshipTeamId" Type="int" />
+          <Property Name="CollegeProjectGuideId" Type="int" />
+          <Property Name="CompanyProjectGuideId" Type="int" />
+          <Property Name="ApplicationId" Type="int" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lookup">
+          <Key>
+            <PropertyRef Name="KeyID" />
+          </Key>
+          <Property Name="KeyID" Type="int" Nullable="false" />
+          <Property Name="KeyCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="KeyName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Sequence" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PortalRegistration">
+          <Key>
+            <PropertyRef Name="RegID" />
+          </Key>
+          <Property Name="RegID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PortalRegistrationType" Type="int" />
+          <Property Name="ContributorType" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectDetails">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="ProjectTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Phase" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectModules">
+          <Key>
+            <PropertyRef Name="ModuleId" />
+          </Key>
+          <Property Name="ModuleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="ModuleTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuestionAnswer">
+          <Key>
+            <PropertyRef Name="QAid" />
+          </Key>
+          <Property Name="QAid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="nvarchar(max)" />
+          <Property Name="AkedBy" Type="int" />
+          <Property Name="AskedOn" Type="datetime" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="LikesCount" Type="int" />
+          <Property Name="DislikesCount" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubModuleDetails">
+          <Key>
+            <PropertyRef Name="SubModuleId" />
+          </Key>
+          <Property Name="SubModuleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModuleId" Type="int" />
+          <Property Name="SubModuleTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="ModuleId" Type="int" />
+          <Property Name="SubModuleId" Type="int" />
+          <Property Name="TaskTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="TaskStatus" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaskAssignmentHistory">
+          <Key>
+            <PropertyRef Name="TaskAssignmentHistoryId" />
+          </Key>
+          <Property Name="TaskAssignmentHistoryId" Type="int" Nullable="false" />
+          <Property Name="TicketAssignmentId" Type="int" />
+          <Property Name="TicketId" Type="int" />
+          <Property Name="AssignedTo" Type="int" />
+          <Property Name="AssignedBy" Type="int" />
+          <Property Name="AssignedOn" Type="datetime" />
+          <Property Name="TicketStatus" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="TaskHistory">
+          <Key>
+            <PropertyRef Name="TaskHistoryId" />
+          </Key>
+          <Property Name="TaskHistoryId" Type="int" Nullable="false" />
+          <Property Name="TaskId" Type="int" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="ModuleId" Type="int" />
+          <Property Name="SubModuleId" Type="int" />
+          <Property Name="TaskTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="TaskStatus" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="int" Nullable="false" />
+          <Property Name="Leader" Type="int" />
+          <Property Name="Member" Type="int" />
+          <Property Name="DeptHOD" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Name="TicketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectId" Type="int" />
+          <Property Name="TaskId" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Type" Type="int" />
+          <Property Name="AssignmentStatus" Type="int" />
+          <Property Name="TicketStatus" Type="int" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TicketAssignment">
+          <Key>
+            <PropertyRef Name="TicketAssignmentId" />
+          </Key>
+          <Property Name="TicketAssignmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TicketId" Type="int" />
+          <Property Name="AssignedTo" Type="int" />
+          <Property Name="AssignedBy" Type="int" />
+          <Property Name="AssignedOn" Type="datetime" />
+          <Property Name="TicketStatus" Type="int" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Answers_PortalRegistration">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="AnsweredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Answers_QuestionAnswer1">
+          <End Role="QuestionAnswer" Type="Self.QuestionAnswer" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionAnswer">
+              <PropertyRef Name="QAid" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="QAid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CollegeProjectGuide_PortalRegistration1">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="CollegeProjectGuide" Type="Self.CollegeProjectGuide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="CollegeProjectGuide">
+              <PropertyRef Name="RegID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="EmpType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup1">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup2">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="EmpBand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup3">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="Designation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup4">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="Department" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_PortalRegistration">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="ReportingTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InternshipApplication_PortalRegistration">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="InternshipApplication" Type="Self.InternshipApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="InternshipApplication">
+              <PropertyRef Name="RegID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectModules_ProjectDetails">
+          <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+          <End Role="ProjectModules" Type="Self.ProjectModules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectDetails">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="ProjectModules">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubModuleDetails_ProjectModules">
+          <End Role="ProjectModules" Type="Self.ProjectModules" Multiplicity="0..1" />
+          <End Role="SubModuleDetails" Type="Self.SubModuleDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectModules">
+              <PropertyRef Name="ModuleId" />
+            </Principal>
+            <Dependent Role="SubModuleDetails">
+              <PropertyRef Name="ModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="TaskStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_ProjectDetails">
+          <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectDetails">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_ProjectModules">
+          <End Role="ProjectModules" Type="Self.ProjectModules" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectModules">
+              <PropertyRef Name="ModuleId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="ModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_SubModuleDetails">
+          <End Role="SubModuleDetails" Type="Self.SubModuleDetails" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubModuleDetails">
+              <PropertyRef Name="SubModuleId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="SubModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_EmployeeDetails">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="AssignedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="TicketStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_Ticket">
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ticket">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_TicketAssignment">
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ticket">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_TicketAssignment2">
+          <End Role="TicketAssignment" Type="Self.TicketAssignment" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TicketAssignment">
+              <PropertyRef Name="TicketAssignmentId" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="AssignedTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="TaskStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_ProjectDetails1">
+          <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectDetails">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_ProjectModules1">
+          <End Role="ProjectModules" Type="Self.ProjectModules" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectModules">
+              <PropertyRef Name="ModuleId" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="ModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_SubModuleDetails1">
+          <End Role="SubModuleDetails" Type="Self.SubModuleDetails" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubModuleDetails">
+              <PropertyRef Name="SubModuleId" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="SubModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_Task1">
+          <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="TaskId" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="TaskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Team_EmployeeDetails">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="Leader" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Team_InternshipApplication">
+          <End Role="InternshipApplication" Type="Self.InternshipApplication" Multiplicity="0..1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternshipApplication">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="Member" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Lookup1">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="AssignmentStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Lookup2">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="TicketStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Task">
+          <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="TaskId" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="TaskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Ticket">
+          <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectDetails">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketAssignment_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="TicketAssignment" Type="Self.TicketAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="TicketAssignment">
+              <PropertyRef Name="TicketStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketAssignment_PortalRegistration">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="TicketAssignment" Type="Self.TicketAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="TicketAssignment">
+              <PropertyRef Name="AssignedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SIMS1DBModelStoreContainer">
+          <EntitySet Name="Answers" EntityType="Self.Answers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CollegeProjectGuide" EntityType="Self.CollegeProjectGuide" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InternshipApplication" EntityType="Self.InternshipApplication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InternshipTeam" EntityType="Self.InternshipTeam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lookup" EntityType="Self.Lookup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PortalRegistration" EntityType="Self.PortalRegistration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectDetails" EntityType="Self.ProjectDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectModules" EntityType="Self.ProjectModules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionAnswer" EntityType="Self.QuestionAnswer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubModuleDetails" EntityType="Self.SubModuleDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskAssignmentHistory" EntityType="Self.TaskAssignmentHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskHistory" EntityType="Self.TaskHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TicketAssignment" EntityType="Self.TicketAssignment" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Answers_PortalRegistration" Association="Self.FK_Answers_PortalRegistration">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Answers_QuestionAnswer1" Association="Self.FK_Answers_QuestionAnswer1">
+            <End Role="QuestionAnswer" EntitySet="QuestionAnswer" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CollegeProjectGuide_PortalRegistration1" Association="Self.FK_CollegeProjectGuide_PortalRegistration1">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="CollegeProjectGuide" EntitySet="CollegeProjectGuide" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup" Association="Self.FK_EmployeeDetails_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup1" Association="Self.FK_EmployeeDetails_Lookup1">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup2" Association="Self.FK_EmployeeDetails_Lookup2">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup3" Association="Self.FK_EmployeeDetails_Lookup3">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup4" Association="Self.FK_EmployeeDetails_Lookup4">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_PortalRegistration" Association="Self.FK_EmployeeDetails_PortalRegistration">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InternshipApplication_PortalRegistration" Association="Self.FK_InternshipApplication_PortalRegistration">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="InternshipApplication" EntitySet="InternshipApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectModules_ProjectDetails" Association="Self.FK_ProjectModules_ProjectDetails">
+            <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+            <End Role="ProjectModules" EntitySet="ProjectModules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubModuleDetails_ProjectModules" Association="Self.FK_SubModuleDetails_ProjectModules">
+            <End Role="ProjectModules" EntitySet="ProjectModules" />
+            <End Role="SubModuleDetails" EntitySet="SubModuleDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Lookup" Association="Self.FK_Task_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_ProjectDetails" Association="Self.FK_Task_ProjectDetails">
+            <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_ProjectModules" Association="Self.FK_Task_ProjectModules">
+            <End Role="ProjectModules" EntitySet="ProjectModules" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_SubModuleDetails" Association="Self.FK_Task_SubModuleDetails">
+            <End Role="SubModuleDetails" EntitySet="SubModuleDetails" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_EmployeeDetails" Association="Self.FK_TaskAssignmentHistory_EmployeeDetails">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_Lookup" Association="Self.FK_TaskAssignmentHistory_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_Ticket" Association="Self.FK_TaskAssignmentHistory_Ticket">
+            <End Role="Ticket" EntitySet="Ticket" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_TicketAssignment" Association="Self.FK_TaskAssignmentHistory_TicketAssignment">
+            <End Role="Ticket" EntitySet="Ticket" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_TicketAssignment2" Association="Self.FK_TaskAssignmentHistory_TicketAssignment2">
+            <End Role="TicketAssignment" EntitySet="TicketAssignment" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_Lookup" Association="Self.FK_TaskHistory_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_ProjectDetails1" Association="Self.FK_TaskHistory_ProjectDetails1">
+            <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_ProjectModules1" Association="Self.FK_TaskHistory_ProjectModules1">
+            <End Role="ProjectModules" EntitySet="ProjectModules" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_SubModuleDetails1" Association="Self.FK_TaskHistory_SubModuleDetails1">
+            <End Role="SubModuleDetails" EntitySet="SubModuleDetails" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_Task1" Association="Self.FK_TaskHistory_Task1">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Team_EmployeeDetails" Association="Self.FK_Team_EmployeeDetails">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="Team" EntitySet="Team" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Team_InternshipApplication" Association="Self.FK_Team_InternshipApplication">
+            <End Role="InternshipApplication" EntitySet="InternshipApplication" />
+            <End Role="Team" EntitySet="Team" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Lookup" Association="Self.FK_Ticket_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Lookup1" Association="Self.FK_Ticket_Lookup1">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Lookup2" Association="Self.FK_Ticket_Lookup2">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Task" Association="Self.FK_Ticket_Task">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Ticket" Association="Self.FK_Ticket_Ticket">
+            <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketAssignment_Lookup" Association="Self.FK_TicketAssignment_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="TicketAssignment" EntitySet="TicketAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketAssignment_PortalRegistration" Association="Self.FK_TicketAssignment_PortalRegistration">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="TicketAssignment" EntitySet="TicketAssignment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SIMS1DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Answers">
+          <Key>
+            <PropertyRef Name="AnswerId" />
+          </Key>
+          <Property Name="AnswerId" Type="Int32" Nullable="false" />
+          <Property Name="QAid" Type="Int32" />
+          <Property Name="AnsweredBy" Type="Int32" />
+          <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnsweredOn" Type="DateTime" Precision="3" />
+          <Property Name="LikesCount" Type="Int32" />
+          <Property Name="DislikesCount" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PortalRegistration" Relationship="Self.FK_Answers_PortalRegistration" FromRole="Answers" ToRole="PortalRegistration" />
+          <NavigationProperty Name="QuestionAnswer" Relationship="Self.FK_Answers_QuestionAnswer1" FromRole="Answers" ToRole="QuestionAnswer" />
+        </EntityType>
+        <EntityType Name="CollegeProjectGuide">
+          <Key>
+            <PropertyRef Name="CollegeGuideId" />
+          </Key>
+          <Property Name="CollegeGuideId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CollegeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="University" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CollegeIdCard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdProof" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PortalRegistration" Relationship="Self.FK_CollegeProjectGuide_PortalRegistration1" FromRole="CollegeProjectGuide" ToRole="PortalRegistration" />
+        </EntityType>
+        <EntityType Name="EmployeeDetails">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EmpType" Type="Int32" />
+          <Property Name="Department" Type="Int32" />
+          <Property Name="Designation" Type="Int32" />
+          <Property Name="Role" Type="Int32" />
+          <Property Name="JoinDate" Type="DateTime" Precision="3" />
+          <Property Name="EmpBand" Type="Int32" />
+          <Property Name="ReportingTo" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Lookup" Relationship="Self.FK_EmployeeDetails_Lookup" FromRole="EmployeeDetails" ToRole="Lookup" />
+          <NavigationProperty Name="Lookup1" Relationship="Self.FK_EmployeeDetails_Lookup1" FromRole="EmployeeDetails" ToRole="Lookup" />
+          <NavigationProperty Name="Lookup2" Relationship="Self.FK_EmployeeDetails_Lookup2" FromRole="EmployeeDetails" ToRole="Lookup" />
+          <NavigationProperty Name="Lookup3" Relationship="Self.FK_EmployeeDetails_Lookup3" FromRole="EmployeeDetails" ToRole="Lookup" />
+          <NavigationProperty Name="Lookup4" Relationship="Self.FK_EmployeeDetails_Lookup4" FromRole="EmployeeDetails" ToRole="Lookup" />
+          <NavigationProperty Name="PortalRegistration" Relationship="Self.FK_EmployeeDetails_PortalRegistration" FromRole="EmployeeDetails" ToRole="PortalRegistration" />
+          <NavigationProperty Name="TaskAssignmentHistory" Relationship="Self.FK_TaskAssignmentHistory_EmployeeDetails" FromRole="EmployeeDetails" ToRole="TaskAssignmentHistory" />
+          <NavigationProperty Name="Team" Relationship="Self.FK_Team_EmployeeDetails" FromRole="EmployeeDetails" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="InternshipApplication">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RegID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Address3" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Course" Type="Int32" />
+          <Property Name="Semester" Type="Int32" />
+          <Property Name="CollegeIDCard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdProof" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NOCLetter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CollegeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="University" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectSubmissionDate" Type="DateTime" Precision="3" />
+          <Property Name="CollegeProjectGuide" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CollegeProjectGuideEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CollegeProjectGuideContact" Type="Int32" />
+          <Property Name="Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApplicationStatus" Type="Int32" />
+          <Property Name="ApprovalLetter" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PortalRegistration" Relationship="Self.FK_InternshipApplication_PortalRegistration" FromRole="InternshipApplication" ToRole="PortalRegistration" />
+          <NavigationProperty Name="Team" Relationship="Self.FK_Team_InternshipApplication" FromRole="InternshipApplication" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="InternshipTeam">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="InternshipTeamId" Type="Int32" />
+          <Property Name="CollegeProjectGuideId" Type="Int32" />
+          <Property Name="CompanyProjectGuideId" Type="Int32" />
+          <Property Name="ApplicationId" Type="Int32" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lookup">
+          <Key>
+            <PropertyRef Name="KeyID" />
+          </Key>
+          <Property Name="KeyID" Type="Int32" Nullable="false" />
+          <Property Name="KeyCode" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="KeyName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Sequence" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_EmployeeDetails_Lookup" FromRole="Lookup" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="EmployeeDetails1" Relationship="Self.FK_EmployeeDetails_Lookup1" FromRole="Lookup" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="EmployeeDetails2" Relationship="Self.FK_EmployeeDetails_Lookup2" FromRole="Lookup" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="EmployeeDetails3" Relationship="Self.FK_EmployeeDetails_Lookup3" FromRole="Lookup" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="EmployeeDetails4" Relationship="Self.FK_EmployeeDetails_Lookup4" FromRole="Lookup" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_Lookup" FromRole="Lookup" ToRole="Task" />
+          <NavigationProperty Name="TaskAssignmentHistory" Relationship="Self.FK_TaskAssignmentHistory_Lookup" FromRole="Lookup" ToRole="TaskAssignmentHistory" />
+          <NavigationProperty Name="TaskHistory" Relationship="Self.FK_TaskHistory_Lookup" FromRole="Lookup" ToRole="TaskHistory" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Lookup" FromRole="Lookup" ToRole="Ticket" />
+          <NavigationProperty Name="Ticket1" Relationship="Self.FK_Ticket_Lookup1" FromRole="Lookup" ToRole="Ticket" />
+          <NavigationProperty Name="Ticket2" Relationship="Self.FK_Ticket_Lookup2" FromRole="Lookup" ToRole="Ticket" />
+          <NavigationProperty Name="TicketAssignment" Relationship="Self.FK_TicketAssignment_Lookup" FromRole="Lookup" ToRole="TicketAssignment" />
+        </EntityType>
+        <EntityType Name="PortalRegistration">
+          <Key>
+            <PropertyRef Name="RegID" />
+          </Key>
+          <Property Name="RegID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PortalRegistrationType" Type="Int32" />
+          <Property Name="ContributorType" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Answers" Relationship="Self.FK_Answers_PortalRegistration" FromRole="PortalRegistration" ToRole="Answers" />
+          <NavigationProperty Name="CollegeProjectGuide" Relationship="Self.FK_CollegeProjectGuide_PortalRegistration1" FromRole="PortalRegistration" ToRole="CollegeProjectGuide" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_EmployeeDetails_PortalRegistration" FromRole="PortalRegistration" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="InternshipApplication" Relationship="Self.FK_InternshipApplication_PortalRegistration" FromRole="PortalRegistration" ToRole="InternshipApplication" />
+          <NavigationProperty Name="TicketAssignment" Relationship="Self.FK_TicketAssignment_PortalRegistration" FromRole="PortalRegistration" ToRole="TicketAssignment" />
+        </EntityType>
+        <EntityType Name="ProjectDetails">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phase" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ProjectModules" Relationship="Self.FK_ProjectModules_ProjectDetails" FromRole="ProjectDetails" ToRole="ProjectModules" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_ProjectDetails" FromRole="ProjectDetails" ToRole="Task" />
+          <NavigationProperty Name="TaskHistory" Relationship="Self.FK_TaskHistory_ProjectDetails1" FromRole="ProjectDetails" ToRole="TaskHistory" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Ticket" FromRole="ProjectDetails" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="ProjectModules">
+          <Key>
+            <PropertyRef Name="ModuleId" />
+          </Key>
+          <Property Name="ModuleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="Int32" />
+          <Property Name="ModuleTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ProjectDetails" Relationship="Self.FK_ProjectModules_ProjectDetails" FromRole="ProjectModules" ToRole="ProjectDetails" />
+          <NavigationProperty Name="SubModuleDetails" Relationship="Self.FK_SubModuleDetails_ProjectModules" FromRole="ProjectModules" ToRole="SubModuleDetails" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_ProjectModules" FromRole="ProjectModules" ToRole="Task" />
+          <NavigationProperty Name="TaskHistory" Relationship="Self.FK_TaskHistory_ProjectModules1" FromRole="ProjectModules" ToRole="TaskHistory" />
+        </EntityType>
+        <EntityType Name="QuestionAnswer">
+          <Key>
+            <PropertyRef Name="QAid" />
+          </Key>
+          <Property Name="QAid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AkedBy" Type="Int32" />
+          <Property Name="AskedOn" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LikesCount" Type="Int32" />
+          <Property Name="DislikesCount" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Answers" Relationship="Self.FK_Answers_QuestionAnswer1" FromRole="QuestionAnswer" ToRole="Answers" />
+        </EntityType>
+        <EntityType Name="SubModuleDetails">
+          <Key>
+            <PropertyRef Name="SubModuleId" />
+          </Key>
+          <Property Name="SubModuleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleId" Type="Int32" />
+          <Property Name="SubModuleTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ProjectModules" Relationship="Self.FK_SubModuleDetails_ProjectModules" FromRole="SubModuleDetails" ToRole="ProjectModules" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_SubModuleDetails" FromRole="SubModuleDetails" ToRole="Task" />
+          <NavigationProperty Name="TaskHistory" Relationship="Self.FK_TaskHistory_SubModuleDetails1" FromRole="SubModuleDetails" ToRole="TaskHistory" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="TaskId" />
+          </Key>
+          <Property Name="TaskId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="Int32" />
+          <Property Name="ModuleId" Type="Int32" />
+          <Property Name="SubModuleId" Type="Int32" />
+          <Property Name="TaskTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaskStatus" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Lookup" Relationship="Self.FK_Task_Lookup" FromRole="Task" ToRole="Lookup" />
+          <NavigationProperty Name="ProjectDetails" Relationship="Self.FK_Task_ProjectDetails" FromRole="Task" ToRole="ProjectDetails" />
+          <NavigationProperty Name="ProjectModules" Relationship="Self.FK_Task_ProjectModules" FromRole="Task" ToRole="ProjectModules" />
+          <NavigationProperty Name="SubModuleDetails" Relationship="Self.FK_Task_SubModuleDetails" FromRole="Task" ToRole="SubModuleDetails" />
+          <NavigationProperty Name="TaskHistory" Relationship="Self.FK_TaskHistory_Task1" FromRole="Task" ToRole="TaskHistory" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Task" FromRole="Task" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="TaskAssignmentHistory">
+          <Key>
+            <PropertyRef Name="TaskAssignmentHistoryId" />
+          </Key>
+          <Property Name="TaskAssignmentHistoryId" Type="Int32" Nullable="false" />
+          <Property Name="TicketAssignmentId" Type="Int32" />
+          <Property Name="TicketId" Type="Int32" />
+          <Property Name="AssignedTo" Type="Int32" />
+          <Property Name="AssignedBy" Type="Int32" />
+          <Property Name="AssignedOn" Type="DateTime" Precision="3" />
+          <Property Name="TicketStatus" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_TaskAssignmentHistory_EmployeeDetails" FromRole="TaskAssignmentHistory" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="Lookup" Relationship="Self.FK_TaskAssignmentHistory_Lookup" FromRole="TaskAssignmentHistory" ToRole="Lookup" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK_TaskAssignmentHistory_Ticket" FromRole="TaskAssignmentHistory" ToRole="Ticket" />
+          <NavigationProperty Name="Ticket1" Relationship="Self.FK_TaskAssignmentHistory_TicketAssignment" FromRole="TaskAssignmentHistory" ToRole="Ticket" />
+          <NavigationProperty Name="TicketAssignment" Relationship="Self.FK_TaskAssignmentHistory_TicketAssignment2" FromRole="TaskAssignmentHistory" ToRole="TicketAssignment" />
+        </EntityType>
+        <EntityType Name="TaskHistory">
+          <Key>
+            <PropertyRef Name="TaskHistoryId" />
+          </Key>
+          <Property Name="TaskHistoryId" Type="Int32" Nullable="false" />
+          <Property Name="TaskId" Type="Int32" />
+          <Property Name="ProjectId" Type="Int32" />
+          <Property Name="ModuleId" Type="Int32" />
+          <Property Name="SubModuleId" Type="Int32" />
+          <Property Name="TaskTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TaskStatus" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Lookup" Relationship="Self.FK_TaskHistory_Lookup" FromRole="TaskHistory" ToRole="Lookup" />
+          <NavigationProperty Name="ProjectDetails" Relationship="Self.FK_TaskHistory_ProjectDetails1" FromRole="TaskHistory" ToRole="ProjectDetails" />
+          <NavigationProperty Name="ProjectModules" Relationship="Self.FK_TaskHistory_ProjectModules1" FromRole="TaskHistory" ToRole="ProjectModules" />
+          <NavigationProperty Name="SubModuleDetails" Relationship="Self.FK_TaskHistory_SubModuleDetails1" FromRole="TaskHistory" ToRole="SubModuleDetails" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_TaskHistory_Task1" FromRole="TaskHistory" ToRole="Task" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="Int32" Nullable="false" />
+          <Property Name="Leader" Type="Int32" />
+          <Property Name="Member" Type="Int32" />
+          <Property Name="DeptHOD" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EmployeeDetails" Relationship="Self.FK_Team_EmployeeDetails" FromRole="Team" ToRole="EmployeeDetails" />
+          <NavigationProperty Name="InternshipApplication" Relationship="Self.FK_Team_InternshipApplication" FromRole="Team" ToRole="InternshipApplication" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Name="TicketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectId" Type="Int32" />
+          <Property Name="TaskId" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="AssignmentStatus" Type="Int32" />
+          <Property Name="TicketStatus" Type="Int32" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Lookup" Relationship="Self.FK_Ticket_Lookup" FromRole="Ticket" ToRole="Lookup" />
+          <NavigationProperty Name="Lookup1" Relationship="Self.FK_Ticket_Lookup1" FromRole="Ticket" ToRole="Lookup" />
+          <NavigationProperty Name="Lookup2" Relationship="Self.FK_Ticket_Lookup2" FromRole="Ticket" ToRole="Lookup" />
+          <NavigationProperty Name="ProjectDetails" Relationship="Self.FK_Ticket_Ticket" FromRole="Ticket" ToRole="ProjectDetails" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Ticket_Task" FromRole="Ticket" ToRole="Task" />
+          <NavigationProperty Name="TaskAssignmentHistory" Relationship="Self.FK_TaskAssignmentHistory_Ticket" FromRole="Ticket" ToRole="TaskAssignmentHistory" />
+          <NavigationProperty Name="TaskAssignmentHistory1" Relationship="Self.FK_TaskAssignmentHistory_TicketAssignment" FromRole="Ticket" ToRole="TaskAssignmentHistory" />
+        </EntityType>
+        <EntityType Name="TicketAssignment">
+          <Key>
+            <PropertyRef Name="TicketAssignmentId" />
+          </Key>
+          <Property Name="TicketAssignmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TicketId" Type="Int32" />
+          <Property Name="AssignedTo" Type="Int32" />
+          <Property Name="AssignedBy" Type="Int32" />
+          <Property Name="AssignedOn" Type="DateTime" Precision="3" />
+          <Property Name="TicketStatus" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Lookup" Relationship="Self.FK_TicketAssignment_Lookup" FromRole="TicketAssignment" ToRole="Lookup" />
+          <NavigationProperty Name="PortalRegistration" Relationship="Self.FK_TicketAssignment_PortalRegistration" FromRole="TicketAssignment" ToRole="PortalRegistration" />
+          <NavigationProperty Name="TaskAssignmentHistory" Relationship="Self.FK_TaskAssignmentHistory_TicketAssignment2" FromRole="TicketAssignment" ToRole="TaskAssignmentHistory" />
+        </EntityType>
+        <Association Name="FK_Answers_PortalRegistration">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="AnsweredBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Answers_QuestionAnswer1">
+          <End Role="QuestionAnswer" Type="Self.QuestionAnswer" Multiplicity="0..1" />
+          <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QuestionAnswer">
+              <PropertyRef Name="QAid" />
+            </Principal>
+            <Dependent Role="Answers">
+              <PropertyRef Name="QAid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CollegeProjectGuide_PortalRegistration1">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="CollegeProjectGuide" Type="Self.CollegeProjectGuide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="CollegeProjectGuide">
+              <PropertyRef Name="RegID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="EmpType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup1">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup2">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="EmpBand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup3">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="Designation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_Lookup4">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="Department" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeDetails_PortalRegistration">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="EmployeeDetails">
+              <PropertyRef Name="ReportingTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_EmployeeDetails">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="AssignedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Team_EmployeeDetails">
+          <End Role="EmployeeDetails" Type="Self.EmployeeDetails" Multiplicity="0..1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmployeeDetails">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="Leader" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InternshipApplication_PortalRegistration">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="InternshipApplication" Type="Self.InternshipApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="InternshipApplication">
+              <PropertyRef Name="RegID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Team_InternshipApplication">
+          <End Role="InternshipApplication" Type="Self.InternshipApplication" Multiplicity="0..1" />
+          <End Role="Team" Type="Self.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InternshipApplication">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="Member" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="TaskStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="TicketStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="TaskStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Lookup1">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="AssignmentStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Lookup2">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="TicketStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketAssignment_Lookup">
+          <End Role="Lookup" Type="Self.Lookup" Multiplicity="0..1" />
+          <End Role="TicketAssignment" Type="Self.TicketAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lookup">
+              <PropertyRef Name="KeyID" />
+            </Principal>
+            <Dependent Role="TicketAssignment">
+              <PropertyRef Name="TicketStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketAssignment_PortalRegistration">
+          <End Role="PortalRegistration" Type="Self.PortalRegistration" Multiplicity="0..1" />
+          <End Role="TicketAssignment" Type="Self.TicketAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortalRegistration">
+              <PropertyRef Name="RegID" />
+            </Principal>
+            <Dependent Role="TicketAssignment">
+              <PropertyRef Name="AssignedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectModules_ProjectDetails">
+          <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+          <End Role="ProjectModules" Type="Self.ProjectModules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectDetails">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="ProjectModules">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_ProjectDetails">
+          <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectDetails">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_ProjectDetails1">
+          <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectDetails">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Ticket">
+          <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectDetails">
+              <PropertyRef Name="ProjectId" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubModuleDetails_ProjectModules">
+          <End Role="ProjectModules" Type="Self.ProjectModules" Multiplicity="0..1" />
+          <End Role="SubModuleDetails" Type="Self.SubModuleDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectModules">
+              <PropertyRef Name="ModuleId" />
+            </Principal>
+            <Dependent Role="SubModuleDetails">
+              <PropertyRef Name="ModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_ProjectModules">
+          <End Role="ProjectModules" Type="Self.ProjectModules" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectModules">
+              <PropertyRef Name="ModuleId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="ModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_ProjectModules1">
+          <End Role="ProjectModules" Type="Self.ProjectModules" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectModules">
+              <PropertyRef Name="ModuleId" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="ModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_SubModuleDetails">
+          <End Role="SubModuleDetails" Type="Self.SubModuleDetails" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubModuleDetails">
+              <PropertyRef Name="SubModuleId" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="SubModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_SubModuleDetails1">
+          <End Role="SubModuleDetails" Type="Self.SubModuleDetails" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubModuleDetails">
+              <PropertyRef Name="SubModuleId" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="SubModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskHistory_Task1">
+          <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+          <End Role="TaskHistory" Type="Self.TaskHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="TaskId" />
+            </Principal>
+            <Dependent Role="TaskHistory">
+              <PropertyRef Name="TaskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Task">
+          <End Role="Task" Type="Self.Task" Multiplicity="0..1" />
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="TaskId" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="TaskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_Ticket">
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ticket">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_TicketAssignment">
+          <End Role="Ticket" Type="Self.Ticket" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ticket">
+              <PropertyRef Name="TicketId" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="TicketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskAssignmentHistory_TicketAssignment2">
+          <End Role="TicketAssignment" Type="Self.TicketAssignment" Multiplicity="0..1" />
+          <End Role="TaskAssignmentHistory" Type="Self.TaskAssignmentHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TicketAssignment">
+              <PropertyRef Name="TicketAssignmentId" />
+            </Principal>
+            <Dependent Role="TaskAssignmentHistory">
+              <PropertyRef Name="AssignedTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SIMS1DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Answers" EntityType="Self.Answers" />
+          <EntitySet Name="CollegeProjectGuide" EntityType="Self.CollegeProjectGuide" />
+          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" />
+          <EntitySet Name="InternshipApplication" EntityType="Self.InternshipApplication" />
+          <EntitySet Name="InternshipTeam" EntityType="Self.InternshipTeam" />
+          <EntitySet Name="Lookup" EntityType="Self.Lookup" />
+          <EntitySet Name="PortalRegistration" EntityType="Self.PortalRegistration" />
+          <EntitySet Name="ProjectDetails" EntityType="Self.ProjectDetails" />
+          <EntitySet Name="ProjectModules" EntityType="Self.ProjectModules" />
+          <EntitySet Name="QuestionAnswer" EntityType="Self.QuestionAnswer" />
+          <EntitySet Name="SubModuleDetails" EntityType="Self.SubModuleDetails" />
+          <EntitySet Name="Task" EntityType="Self.Task" />
+          <EntitySet Name="TaskAssignmentHistory" EntityType="Self.TaskAssignmentHistory" />
+          <EntitySet Name="TaskHistory" EntityType="Self.TaskHistory" />
+          <EntitySet Name="Team" EntityType="Self.Team" />
+          <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+          <EntitySet Name="TicketAssignment" EntityType="Self.TicketAssignment" />
+          <AssociationSet Name="FK_Answers_PortalRegistration" Association="Self.FK_Answers_PortalRegistration">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Answers_QuestionAnswer1" Association="Self.FK_Answers_QuestionAnswer1">
+            <End Role="QuestionAnswer" EntitySet="QuestionAnswer" />
+            <End Role="Answers" EntitySet="Answers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CollegeProjectGuide_PortalRegistration1" Association="Self.FK_CollegeProjectGuide_PortalRegistration1">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="CollegeProjectGuide" EntitySet="CollegeProjectGuide" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup" Association="Self.FK_EmployeeDetails_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup1" Association="Self.FK_EmployeeDetails_Lookup1">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup2" Association="Self.FK_EmployeeDetails_Lookup2">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup3" Association="Self.FK_EmployeeDetails_Lookup3">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_Lookup4" Association="Self.FK_EmployeeDetails_Lookup4">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeDetails_PortalRegistration" Association="Self.FK_EmployeeDetails_PortalRegistration">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_EmployeeDetails" Association="Self.FK_TaskAssignmentHistory_EmployeeDetails">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Team_EmployeeDetails" Association="Self.FK_Team_EmployeeDetails">
+            <End Role="EmployeeDetails" EntitySet="EmployeeDetails" />
+            <End Role="Team" EntitySet="Team" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InternshipApplication_PortalRegistration" Association="Self.FK_InternshipApplication_PortalRegistration">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="InternshipApplication" EntitySet="InternshipApplication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Team_InternshipApplication" Association="Self.FK_Team_InternshipApplication">
+            <End Role="InternshipApplication" EntitySet="InternshipApplication" />
+            <End Role="Team" EntitySet="Team" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Lookup" Association="Self.FK_Task_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_Lookup" Association="Self.FK_TaskAssignmentHistory_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_Lookup" Association="Self.FK_TaskHistory_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Lookup" Association="Self.FK_Ticket_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Lookup1" Association="Self.FK_Ticket_Lookup1">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Lookup2" Association="Self.FK_Ticket_Lookup2">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketAssignment_Lookup" Association="Self.FK_TicketAssignment_Lookup">
+            <End Role="Lookup" EntitySet="Lookup" />
+            <End Role="TicketAssignment" EntitySet="TicketAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketAssignment_PortalRegistration" Association="Self.FK_TicketAssignment_PortalRegistration">
+            <End Role="PortalRegistration" EntitySet="PortalRegistration" />
+            <End Role="TicketAssignment" EntitySet="TicketAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectModules_ProjectDetails" Association="Self.FK_ProjectModules_ProjectDetails">
+            <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+            <End Role="ProjectModules" EntitySet="ProjectModules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_ProjectDetails" Association="Self.FK_Task_ProjectDetails">
+            <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_ProjectDetails1" Association="Self.FK_TaskHistory_ProjectDetails1">
+            <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Ticket" Association="Self.FK_Ticket_Ticket">
+            <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubModuleDetails_ProjectModules" Association="Self.FK_SubModuleDetails_ProjectModules">
+            <End Role="ProjectModules" EntitySet="ProjectModules" />
+            <End Role="SubModuleDetails" EntitySet="SubModuleDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_ProjectModules" Association="Self.FK_Task_ProjectModules">
+            <End Role="ProjectModules" EntitySet="ProjectModules" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_ProjectModules1" Association="Self.FK_TaskHistory_ProjectModules1">
+            <End Role="ProjectModules" EntitySet="ProjectModules" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_SubModuleDetails" Association="Self.FK_Task_SubModuleDetails">
+            <End Role="SubModuleDetails" EntitySet="SubModuleDetails" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_SubModuleDetails1" Association="Self.FK_TaskHistory_SubModuleDetails1">
+            <End Role="SubModuleDetails" EntitySet="SubModuleDetails" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskHistory_Task1" Association="Self.FK_TaskHistory_Task1">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="TaskHistory" EntitySet="TaskHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Task" Association="Self.FK_Ticket_Task">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_Ticket" Association="Self.FK_TaskAssignmentHistory_Ticket">
+            <End Role="Ticket" EntitySet="Ticket" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_TicketAssignment" Association="Self.FK_TaskAssignmentHistory_TicketAssignment">
+            <End Role="Ticket" EntitySet="Ticket" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskAssignmentHistory_TicketAssignment2" Association="Self.FK_TaskAssignmentHistory_TicketAssignment2">
+            <End Role="TicketAssignment" EntitySet="TicketAssignment" />
+            <End Role="TaskAssignmentHistory" EntitySet="TaskAssignmentHistory" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SIMS1DBModelStoreContainer" CdmEntityContainer="SIMS1DBEntities">
+          <EntitySetMapping Name="Answers">
+            <EntityTypeMapping TypeName="SIMS1DBModel.Answers">
+              <MappingFragment StoreEntitySet="Answers">
+                <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+                <ScalarProperty Name="QAid" ColumnName="QAid" />
+                <ScalarProperty Name="AnsweredBy" ColumnName="AnsweredBy" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="AnsweredOn" ColumnName="AnsweredOn" />
+                <ScalarProperty Name="LikesCount" ColumnName="LikesCount" />
+                <ScalarProperty Name="DislikesCount" ColumnName="DislikesCount" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CollegeProjectGuide">
+            <EntityTypeMapping TypeName="SIMS1DBModel.CollegeProjectGuide">
+              <MappingFragment StoreEntitySet="CollegeProjectGuide">
+                <ScalarProperty Name="CollegeGuideId" ColumnName="CollegeGuideId" />
+                <ScalarProperty Name="RegID" ColumnName="RegID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+                <ScalarProperty Name="University" ColumnName="University" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="CollegeIdCard" ColumnName="CollegeIdCard" />
+                <ScalarProperty Name="IdProof" ColumnName="IdProof" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeDetails">
+            <EntityTypeMapping TypeName="SIMS1DBModel.EmployeeDetails">
+              <MappingFragment StoreEntitySet="EmployeeDetails">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+                <ScalarProperty Name="EmpBand" ColumnName="EmpBand" />
+                <ScalarProperty Name="ReportingTo" ColumnName="ReportingTo" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InternshipApplication">
+            <EntityTypeMapping TypeName="SIMS1DBModel.InternshipApplication">
+              <MappingFragment StoreEntitySet="InternshipApplication">
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="RegID" ColumnName="RegID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="CollegeIDCard" ColumnName="CollegeIDCard" />
+                <ScalarProperty Name="IdProof" ColumnName="IdProof" />
+                <ScalarProperty Name="NOCLetter" ColumnName="NOCLetter" />
+                <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+                <ScalarProperty Name="University" ColumnName="University" />
+                <ScalarProperty Name="ProjectSubmissionDate" ColumnName="ProjectSubmissionDate" />
+                <ScalarProperty Name="CollegeProjectGuide" ColumnName="CollegeProjectGuide" />
+                <ScalarProperty Name="CollegeProjectGuideEmail" ColumnName="CollegeProjectGuideEmail" />
+                <ScalarProperty Name="CollegeProjectGuideContact" ColumnName="CollegeProjectGuideContact" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="ApplicationStatus" ColumnName="ApplicationStatus" />
+                <ScalarProperty Name="ApprovalLetter" ColumnName="ApprovalLetter" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InternshipTeam">
+            <EntityTypeMapping TypeName="SIMS1DBModel.InternshipTeam">
+              <MappingFragment StoreEntitySet="InternshipTeam">
+                <ScalarProperty Name="InternshipTeamId" ColumnName="InternshipTeamId" />
+                <ScalarProperty Name="CollegeProjectGuideId" ColumnName="CollegeProjectGuideId" />
+                <ScalarProperty Name="CompanyProjectGuideId" ColumnName="CompanyProjectGuideId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lookup">
+            <EntityTypeMapping TypeName="SIMS1DBModel.Lookup">
+              <MappingFragment StoreEntitySet="Lookup">
+                <ScalarProperty Name="KeyID" ColumnName="KeyID" />
+                <ScalarProperty Name="KeyCode" ColumnName="KeyCode" />
+                <ScalarProperty Name="KeyName" ColumnName="KeyName" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PortalRegistration">
+            <EntityTypeMapping TypeName="SIMS1DBModel.PortalRegistration">
+              <MappingFragment StoreEntitySet="PortalRegistration">
+                <ScalarProperty Name="RegID" ColumnName="RegID" />
+                <ScalarProperty Name="PortalRegistrationType" ColumnName="PortalRegistrationType" />
+                <ScalarProperty Name="ContributorType" ColumnName="ContributorType" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectDetails">
+            <EntityTypeMapping TypeName="SIMS1DBModel.ProjectDetails">
+              <MappingFragment StoreEntitySet="ProjectDetails">
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ProjectTitle" ColumnName="ProjectTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Phase" ColumnName="Phase" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectModules">
+            <EntityTypeMapping TypeName="SIMS1DBModel.ProjectModules">
+              <MappingFragment StoreEntitySet="ProjectModules">
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ModuleTitle" ColumnName="ModuleTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionAnswer">
+            <EntityTypeMapping TypeName="SIMS1DBModel.QuestionAnswer">
+              <MappingFragment StoreEntitySet="QuestionAnswer">
+                <ScalarProperty Name="QAid" ColumnName="QAid" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="AkedBy" ColumnName="AkedBy" />
+                <ScalarProperty Name="AskedOn" ColumnName="AskedOn" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LikesCount" ColumnName="LikesCount" />
+                <ScalarProperty Name="DislikesCount" ColumnName="DislikesCount" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubModuleDetails">
+            <EntityTypeMapping TypeName="SIMS1DBModel.SubModuleDetails">
+              <MappingFragment StoreEntitySet="SubModuleDetails">
+                <ScalarProperty Name="SubModuleId" ColumnName="SubModuleId" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="SubModuleTitle" ColumnName="SubModuleTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Task">
+            <EntityTypeMapping TypeName="SIMS1DBModel.Task">
+              <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="SubModuleId" ColumnName="SubModuleId" />
+                <ScalarProperty Name="TaskTitle" ColumnName="TaskTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskAssignmentHistory">
+            <EntityTypeMapping TypeName="SIMS1DBModel.TaskAssignmentHistory">
+              <MappingFragment StoreEntitySet="TaskAssignmentHistory">
+                <ScalarProperty Name="TaskAssignmentHistoryId" ColumnName="TaskAssignmentHistoryId" />
+                <ScalarProperty Name="TicketAssignmentId" ColumnName="TicketAssignmentId" />
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+                <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+                <ScalarProperty Name="AssignedOn" ColumnName="AssignedOn" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskHistory">
+            <EntityTypeMapping TypeName="SIMS1DBModel.TaskHistory">
+              <MappingFragment StoreEntitySet="TaskHistory">
+                <ScalarProperty Name="TaskHistoryId" ColumnName="TaskHistoryId" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="SubModuleId" ColumnName="SubModuleId" />
+                <ScalarProperty Name="TaskTitle" ColumnName="TaskTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Team">
+            <EntityTypeMapping TypeName="SIMS1DBModel.Team">
+              <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+                <ScalarProperty Name="Leader" ColumnName="Leader" />
+                <ScalarProperty Name="Member" ColumnName="Member" />
+                <ScalarProperty Name="DeptHOD" ColumnName="DeptHOD" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ticket">
+            <EntityTypeMapping TypeName="SIMS1DBModel.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="AssignmentStatus" ColumnName="AssignmentStatus" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketAssignment">
+            <EntityTypeMapping TypeName="SIMS1DBModel.TicketAssignment">
+              <MappingFragment StoreEntitySet="TicketAssignment">
+                <ScalarProperty Name="TicketAssignmentId" ColumnName="TicketAssignmentId" />
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+                <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+                <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+                <ScalarProperty Name="AssignedOn" ColumnName="AssignedOn" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

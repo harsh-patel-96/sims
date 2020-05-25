@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d99c21656bea486a870fb59df6945dd4" Name="Diagram1">
+        <EntityTypeShape EntityType="SIMS1DBModel.Answers" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.CollegeProjectGuide" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.EmployeeDetails" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.InternshipApplication" Width="1.5" PointX="6" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.InternshipTeam" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.Lookup" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.PortalRegistration" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.ProjectDetails" Width="1.5" PointX="6" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.ProjectModules" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.QuestionAnswer" Width="1.5" PointX="6.75" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.SubModuleDetails" Width="1.5" PointX="3.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.Task" Width="1.5" PointX="6" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.TaskAssignmentHistory" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.TaskHistory" Width="1.5" PointX="11.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.Team" Width="1.5" PointX="8.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.Ticket" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SIMS1DBModel.TicketAssignment" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Answers_PortalRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Answers_QuestionAnswer1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_CollegeProjectGuide_PortalRegistration1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_EmployeeDetails_Lookup" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_EmployeeDetails_Lookup1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_EmployeeDetails_Lookup2" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_EmployeeDetails_Lookup3" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_EmployeeDetails_Lookup4" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_EmployeeDetails_PortalRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskAssignmentHistory_EmployeeDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Team_EmployeeDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_InternshipApplication_PortalRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Team_InternshipApplication" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Task_Lookup" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskAssignmentHistory_Lookup" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskHistory_Lookup" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Ticket_Lookup" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Ticket_Lookup1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Ticket_Lookup2" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TicketAssignment_Lookup" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TicketAssignment_PortalRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_ProjectModules_ProjectDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Task_ProjectDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskHistory_ProjectDetails1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Ticket_Ticket" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_SubModuleDetails_ProjectModules" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Task_ProjectModules" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskHistory_ProjectModules1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Task_SubModuleDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskHistory_SubModuleDetails1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskHistory_Task1" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_Ticket_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskAssignmentHistory_Ticket" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskAssignmentHistory_TicketAssignment" ManuallyRouted="false" />
+        <AssociationConnector Association="SIMS1DBModel.FK_TaskAssignmentHistory_TicketAssignment2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,335 @@
+﻿@model IEnumerable<SIMS.Models.Ticket>
+   @using GridMvc.Html
+    @{
+        ViewBag.Title = "Ticket";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+    
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
+    
+
+ <body class="sidebar-mini sidebar-collapse" style="height:auto">
+     <div class="content-wrapper" style="min-height: 1228.23px;">
+
+         <div class="code-cut">
+             @Html.Grid(Model).AutoGenerateColumns().Sortable().Filterable().WithPaging(5)
+             @*@Html.Grid(Model).Columns(columns =>
+            {
+                columns.Add(col => col.TicketId).Titled("TicktId").Filterable(true);
+                columns.Add(col => col.ProjectId).Titled("ProjectId").Filterable(true);
+                columns.Add(col => col.Title).Titled("Title").Filterable(true);
+                columns.Add(col => col.Type).Titled("Type").Filterable(true);
+                columns.Add(col => col.TicketStatus).Titled("TicketStatus").Filterable(true);
+                columns.Add(col => col.Remarks).Titled("Remarks").Filterable(true);
+                columns.Add(col => col.CreatedOn).Titled("CreatedOn").Filterable(true);
+                columns.Add(col => col.UpdatedOn).Titled("UpdatedOn").Filterable(true);
+
+
+            }).WithPaging(10).Sortable(true);*@
+         </div>
+     </div>
+         @*<div class="content-wrapper" style="min-height: 1228.23px;">
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">View Tickets</h3>
+                                </div>
+
+                                <form role="form" name="sendreport" method="post" action="#">
+                                    <div class="card-body col-sm-6">
+                                        <div class="form-group">
+                                            <h3>Filters</h3><br />
+                                            <label>Ticket Title</label>
+                                            <input type="text" class="form-control" placeholder="Sample Ticket">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Ticket Type</label>
+                                            <select class="form-control" name="project">
+                                                <option>Testing</option>
+                                                <option>Coding</option>
+                                                <option>Designing</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Project</label>
+                                            <select class="form-control" name="project">
+                                                <option>SIMS</option>
+                                                <option>TMS</option>
+                                                <option>Amul</option>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>AssignedTo</label>
+                                            <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                                                <option data-select2-id="1">HarshPatel</option>
+                                                <option data-select2-id="2">AksharPatel</option>
+                                                <option data-select2-id="3">MihirPAtel</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>AssignedBy</label>
+                                            <select class="form-control">
+                                                <option>Riddhi Pandya</option>
+                                                <option>Satyam Raval</option>
+                                                <option>Bhavin</option>
+                                                <option>Kalpesh</option>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Ticket Status</label>
+                                            <select class="form-control">
+                                                <option>Open</option>
+                                                <option>Close</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Created Date</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                </div>
+                                                <input type="date" id="datmask" class="form-control" data-inputmask-alias="datetime" data-placeholder="dd/mm/yyyy" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label>Updated Date</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                                </div>
+                                                <input type="date" id="datemask" class="form-control" data-inputmask-alias="datetime" data-placeholder="dd/mm/yyyy" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                            </div>
+                                            <!-- /.input group -->
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /.card-body -->
+
+                                    <div class="card-footer">
+
+                                        <button type="submit" class="btn btn-primary">Apply</button>
+
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <!--2-->
+
+                        <div class="col-md-8">
+
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Ticket</h3>
+                                    <div class="card-tools">
+                                        <div class="input-group input-group-sm" style="width: 150px;">
+                                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                        <div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row">
+                                            <div class="col-sm-12">
+                                                <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th>Sr.No</th>
+                                                            <th>Ticket Id</th>
+                                                            <th>Ticket Title</th>
+                                                            <th>Status</th>
+                                                            <th>Remarks</th>
+                                                            <th>Type</th>
+                                                            <th>AssignedBy</th>
+                                                            <th>AssignedTo</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr role="row" class="odd">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5">
+                                                <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 results</div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-7">
+                                                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                                                    <ul class="pagination">
+                                                        <li class="paginate_button page-item previous disabled" id="example2_previous">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                                        </li>
+                                                        <li class="paginate_button page-item active">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                                                        </li>
+                                                        <li class="paginate_button page-item ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                                                        </li>
+                                                        <li class="paginate_button page-item ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                                                        </li>
+                                                        <li class="paginate_button page-item ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a>
+                                                        </li>
+                                                        <li class="paginate_button page-item ">
+                                                            <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>*@
+         <!-- InputMask -->
+</body>
+    <script src="~/Content/plugins/moment/moment.min.js"></script>
+    <script src="~/Content/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="~/Scripts/gridmvc.min.js"></script>
+
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+
+            //Initialize Select2 Elements
+            $('.select2bs4').select2({
+                theme: 'bootstrap4'
+            })
+            //Datemask dd/mm/yyyy
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            //Datemask2 mm/dd/yyyy
+            $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+        }
+    </script>
+
+
